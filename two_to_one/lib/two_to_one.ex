@@ -24,6 +24,6 @@ defmodule TwoToOne do
       "abcdefghijklmnopqrstuvwxyz"
   """
   def longest(a, b) do
-    (a <> b) |> String.split("") |> Enum.uniq() |> Enum.sort() |> Enum.join()
+    (a <> b) |> String.graphemes() |> Enum.uniq() |> Enum.sort() |> Enum.join()
   end
 end
