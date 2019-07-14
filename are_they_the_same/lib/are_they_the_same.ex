@@ -16,6 +16,8 @@ defmodule AreTheyTheSame do
   """
   @spec comp([number], [number]) :: boolean
   def comp(a, b) do
-    a |> Enum.map(fn e -> e * e end) |> Enum.all?(fn i -> i in b end)
+    a |> Enum.map(&(&1 * &1)) |> Enum.sort() == b |> Enum.sort()
   end
+
+  def comp(_, _), do: false
 end
